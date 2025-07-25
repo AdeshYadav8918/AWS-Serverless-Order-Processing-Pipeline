@@ -17,13 +17,14 @@ graph TD
     G --> I[lambda_function.py];
 
     C --> J[workflow_definition.asl.json]
-    
+end
+
+
 Architecture
 The pipeline follows an event-driven pattern. An order message is sent to an SQS queue, which triggers a Step Functions workflow. This workflow orchestrates a Lambda function that handles the core business logic: logging the event, sending a confirmation email via SES, and publishing a notification to an SNS topic.
 
 Code snippet
 
-```mermaid
 graph TD
     subgraph "Order Ingestion"
         A[SQS Queue: SimpleOrderQueue]
