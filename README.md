@@ -1,9 +1,9 @@
-# AWS-Serverless-Order-Processing-Pipeline
+AWS-Serverless-Order-Processing-Pipeline
 This project demonstrates a simple, event-driven serverless workflow on AWS for processing orders. It integrates several key AWS services to create a robust and scalable pipeline, from message queuing to workflow orchestration and user notification.
 
 File Structure
+Code snippet
 
-```mermaid
 graph TD
     A[.] --> B[lambda_functions];
     A --> C[step_function];
@@ -16,11 +16,9 @@ graph TD
     F --> H[lambda_function.py];
     G --> I[lambda_function.py];
 
-    C --> J[workflow_definition.asl.json]
-```
-
+    C --> J[workflow_definition.asl.json];
 Architecture
-The pipeline follows an event-driven pattern. An order message is sent to an SQS queue, which triggers a Step Functions workflow. This workflow orchestrates a Lambda function that handles the core business logic: logging the event, sending a confirmation email via SES, and publishing a notification to an SNS topic.
+The pipeline follows an event-driven pattern. An order message is sent to an SQS queue, which can trigger a Step Functions workflow. This workflow orchestrates a Lambda function that handles the core business logic: logging the event, sending a confirmation email via SES, and publishing a notification to an SNS topic.
 
 Code snippet
 
@@ -51,6 +49,7 @@ graph TD
     C --> D
     C --> E
     C --> F
+    
 AWS Services Used
 📬 Amazon SQS: Decouples the order submission from the processing logic.
 
@@ -79,7 +78,7 @@ An IAM user with permissions for the services listed above.
 A verified email identity in Amazon SES.
 
 Deployment Steps
-Create Resources: Manually create the SQS queue, SNS topic, and Lambda functions as described in the assignment. The code for the Lambda functions can be found in the lambda_functions/ directory.
+Create Resources: Manually create the SQS queue, SNS topic, and Lambda functions. The code for the Lambda functions can be found in the lambda_functions/ directory.
 
 Configure Lambda:
 
