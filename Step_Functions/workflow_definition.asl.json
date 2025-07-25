@@ -1,0 +1,12 @@
+{
+  "Comment": "A simple state machine that invokes a Lambda function to process an order.",
+  "StartAt": "ProcessOrder",
+  "States": {
+    "ProcessOrder": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:REGION:ACCOUNT_ID:function:ProcessOrderFunction",   // Replace the REGION with your desired region and ACCOUNT_ID with your AWS ID
+      // Example: "arn:aws:lambda:us-east-1:123456789012:function:ProcessOrderFunction" 
+      "End": true
+    }
+  }
+}
