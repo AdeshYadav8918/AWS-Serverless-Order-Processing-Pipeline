@@ -20,7 +20,7 @@ graph TD
 Architecture
 The pipeline follows an event-driven pattern. An order message is sent to an SQS queue, which can trigger a Step Functions workflow. This workflow orchestrates a Lambda function that handles the core business logic: logging the event, sending a confirmation email via SES, and publishing a notification to an SNS topic.
 ```Code snippet
-graph TD ```
+graph TD```
 
     subgraph "Order Ingestion"
         A[SQS Queue: SimpleOrderQueue]
