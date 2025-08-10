@@ -4,6 +4,7 @@ This project demonstrates a simple, event-driven serverless workflow on AWS for 
 File Structure
 Code snippet
 graph TD
+
     A[.] --> B[lambda_functions];
     A --> C[step_function];
     A --> D[.gitignore];
