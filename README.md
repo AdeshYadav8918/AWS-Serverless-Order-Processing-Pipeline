@@ -3,7 +3,7 @@ This project demonstrates a simple, event-driven serverless workflow on AWS for 
 
 File Structure
 Code snippet
-graph TD
+```graph TD
     A[.] --> B[lambda_functions];
     A --> C[step_function];
     A --> D[.gitignore];
@@ -16,6 +16,7 @@ graph TD
     G --> I[lambda_function.py];
 
     C --> J[workflow_definition.asl.json];
+```
 Architecture
 The pipeline follows an event-driven pattern. An order message is sent to an SQS queue, which can trigger a Step Functions workflow. This workflow orchestrates a Lambda function that handles the core business logic: logging the event, sending a confirmation email via SES, and publishing a notification to an SNS topic.
 Code snippet
