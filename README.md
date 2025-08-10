@@ -2,9 +2,9 @@ AWS-Serverless-Order-Processing-Pipeline
 This project demonstrates a simple, event-driven serverless workflow on AWS for processing orders. It integrates several key AWS services to create a robust and scalable pipeline, from message queuing to workflow orchestration and user notification.
 
 File Structure
-Code snippet
+```Code snippet
 graph TD
-
+```
     A[.] --> B[lambda_functions];
     A --> C[step_function];
     A --> D[.gitignore];
@@ -19,8 +19,9 @@ graph TD
     C --> J[workflow_definition.asl.json];
 Architecture
 The pipeline follows an event-driven pattern. An order message is sent to an SQS queue, which can trigger a Step Functions workflow. This workflow orchestrates a Lambda function that handles the core business logic: logging the event, sending a confirmation email via SES, and publishing a notification to an SNS topic.
-Code snippet
-graph TD
+```Code snippet
+graph TD ```
+
     subgraph "Order Ingestion"
         A[SQS Queue: SimpleOrderQueue]
     end
